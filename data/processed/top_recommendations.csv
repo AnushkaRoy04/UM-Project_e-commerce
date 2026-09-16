@@ -1,0 +1,54 @@
+Confectionery SKU,Destination Region,Current Hub,Recommended Hub,Policy Action,Orders,Current Distance (mi),Recommended Distance (mi),Distance Reduction (%),Freight Miles Saved,Est. Freight Savings ($),Gross Margin (%),Optimization Score
+Kazookles,Interior,The Other Factory,The Other Factory,Maintain Baseline,11,500.1,500.1,0.0,0,0.0,7.7,13.07
+Laffy Taffy,Pacific,Sugar Shack,Sugar Shack,Maintain Baseline,1,1206.9,1206.9,0.0,0,0.0,62.3,20.09
+Lickable Wallpaper,Interior,Secret Factory,Secret Factory,Maintain Baseline,15,350.0,350.0,0.0,0,0.0,50.0,39.87
+Wonka Bar - Fudge Mallows,Pacific,Lot's O' Nuts,Lot's O' Nuts,Maintain Baseline,569,606.0,606.0,0.0,0,0.0,66.7,28.56
+Wonka Bar - Milk Chocolate,Atlantic,Wicked Choccy's,Wicked Choccy's,Maintain Baseline,639,743.9,743.9,0.0,0,0.0,64.9,28.06
+Wonka Bar - Milk Chocolate,Gulf,Wicked Choccy's,Wicked Choccy's,Maintain Baseline,333,381.0,381.0,0.0,0,0.0,64.9,45.35
+Wonka Bar - Nutty Crunch Surprise,Pacific,Lot's O' Nuts,Lot's O' Nuts,Maintain Baseline,572,612.4,612.4,0.0,0,0.0,71.3,28.03
+Wonka Bar - Triple Dazzle Caramel,Atlantic,Wicked Choccy's,Wicked Choccy's,Maintain Baseline,558,701.2,701.2,0.0,0,0.0,65.3,24.58
+Wonka Bar - Triple Dazzle Caramel,Gulf,Wicked Choccy's,Wicked Choccy's,Maintain Baseline,330,367.3,367.3,0.0,0,0.0,65.3,45.61
+Wonka Bar -Scrumdiddlyumptious,Pacific,Lot's O' Nuts,Lot's O' Nuts,Maintain Baseline,672,601.3,601.3,0.0,0,0.0,69.4,29.91
+Wonka Bar - Triple Dazzle Caramel,Pacific,Wicked Choccy's,Lot's O' Nuts,Reassign Hub,676,2146.8,513.8,76.1,1103890,1931807.5,65.3,56.98
+Wonka Bar - Milk Chocolate,Pacific,Wicked Choccy's,Lot's O' Nuts,Reassign Hub,666,2120.2,485.8,77.1,1088518,1904906.5,64.9,57.37
+Wonka Bar -Scrumdiddlyumptious,Atlantic,Lot's O' Nuts,Wicked Choccy's,Reassign Hub,623,1976.1,617.9,68.7,846148,1480759.0,69.4,54.44
+Wonka Bar - Fudge Mallows,Atlantic,Lot's O' Nuts,Wicked Choccy's,Reassign Hub,548,1980.6,624.4,68.5,743198,1300596.5,66.7,53.48
+Wonka Bar - Nutty Crunch Surprise,Atlantic,Lot's O' Nuts,Wicked Choccy's,Reassign Hub,490,1992.4,626.8,68.5,669123,1170965.25,71.3,54.92
+Wonka Bar - Nutty Crunch Surprise,Interior,Lot's O' Nuts,The Other Factory,Reassign Hub,452,1199.1,189.1,84.2,456528,798924.0,71.3,63.52
+Wonka Bar -Scrumdiddlyumptious,Gulf,Lot's O' Nuts,Wicked Choccy's,Reassign Hub,310,1641.9,177.3,89.2,454028,794549.0,69.4,64.68
+Wonka Bar -Scrumdiddlyumptious,Interior,Lot's O' Nuts,The Other Factory,Reassign Hub,459,1157.4,173.3,85.0,451678,790436.5,69.4,63.34
+Wonka Bar - Fudge Mallows,Gulf,Lot's O' Nuts,Wicked Choccy's,Reassign Hub,291,1650.4,173.1,89.5,429900,752325.0,66.7,64.0
+Wonka Bar - Nutty Crunch Surprise,Gulf,Lot's O' Nuts,Wicked Choccy's,Reassign Hub,296,1636.3,186.6,88.6,429103,750930.25,71.3,64.95
+Wonka Bar - Fudge Mallows,Interior,Lot's O' Nuts,The Other Factory,Reassign Hub,410,1185.2,171.8,85.5,415476,727083.0,66.7,62.75
+Wonka Bar - Milk Chocolate,Interior,Wicked Choccy's,The Other Factory,Reassign Hub,499,861.4,179.4,79.2,340338,595591.5,64.9,59.07
+Wonka Bar - Triple Dazzle Caramel,Interior,Wicked Choccy's,The Other Factory,Reassign Hub,451,872.0,200.6,77.0,302832,529956.0,65.3,58.1
+Kazookles,Pacific,The Other Factory,Lot's O' Nuts,Reassign Hub,30,1652.1,564.4,65.8,32631,57104.25,7.7,34.57
+Lickable Wallpaper,Pacific,Secret Factory,Lot's O' Nuts,Reassign Hub,34,1425.1,487.8,65.8,31869,55770.75,50.0,47.23
+Wonka Gum,Pacific,Secret Factory,Lot's O' Nuts,Reassign Hub,28,1422.3,428.3,69.9,27831,48704.25,52.0,49.89
+Wonka Gum,Gulf,Secret Factory,Wicked Choccy's,Reassign Hub,26,712.9,196.6,72.4,13423,23490.25,52.0,51.06
+Kazookles,Atlantic,The Other Factory,Wicked Choccy's,Reassign Hub,37,920.3,697.8,24.2,8234,14409.5,7.7,13.64
+Wonka Gum,Interior,Secret Factory,The Other Factory,Reassign Hub,29,471.9,192.0,59.3,8116,14203.0,52.0,45.25
+Wonka Gum,Atlantic,Secret Factory,Wicked Choccy's,Reassign Hub,37,789.9,610.2,22.7,6648,11634.0,52.0,26.22
+Kazookles,Gulf,The Other Factory,Wicked Choccy's,Reassign Hub,18,448.9,221.4,50.7,4095,7166.25,7.7,26.9
+Lickable Wallpaper,Atlantic,Secret Factory,Wicked Choccy's,Reassign Hub,35,741.9,629.6,15.1,3930,6877.5,50.0,21.81
+SweeTARTS,Interior,Sugar Shack,The Other Factory,Reassign Hub,4,1070.7,234.2,78.1,3346,5855.5,46.7,53.07
+Laffy Taffy,Atlantic,Sugar Shack,Wicked Choccy's,Reassign Hub,6,1143.0,665.4,41.8,2866,5015.5,62.3,38.83
+Laffy Taffy,Gulf,Sugar Shack,Wicked Choccy's,Reassign Hub,2,1527.7,212.0,86.1,2631,4604.25,62.3,61.0
+Hair Toffee,Pacific,The Other Factory,Lot's O' Nuts,Reassign Hub,2,1414.5,190.3,86.5,2448,4284.0,77.8,65.95
+Lickable Wallpaper,Gulf,Secret Factory,The Other Factory,Reassign Hub,10,511.3,271.1,47.0,2402,4203.5,50.0,38.49
+SweeTARTS,Atlantic,Sugar Shack,Wicked Choccy's,Reassign Hub,5,1126.8,674.8,40.1,2260,3955.0,46.7,33.3
+Nerds,Atlantic,Sugar Shack,Wicked Choccy's,Reassign Hub,4,1197.1,694.9,41.9,2009,3515.75,46.7,34.22
+Fizzy Lifting Drinks,Gulf,Sugar Shack,Wicked Choccy's,Reassign Hub,1,1448.8,125.1,91.4,1324,2317.0,60.0,62.93
+Fizzy Lifting Drinks,Pacific,Sugar Shack,Lot's O' Nuts,Reassign Hub,1,1268.8,61.7,95.1,1207,2112.25,60.0,64.91
+Fizzy Lifting Drinks,Atlantic,Sugar Shack,Wicked Choccy's,Reassign Hub,2,1191.8,675.5,43.3,1033,1807.75,60.0,38.91
+SweeTARTS,Pacific,Sugar Shack,Lot's O' Nuts,Reassign Hub,1,1496.7,688.4,54.0,808,1414.0,46.7,40.35
+Fun Dip,Gulf,Sugar Shack,The Other Factory,Reassign Hub,1,982.4,189.6,80.7,793,1387.75,40.0,52.35
+Everlasting Gobstopper,Gulf,Secret Factory,Wicked Choccy's,Reassign Hub,1,1070.2,299.9,72.0,770,1347.5,80.0,59.23
+Fizzy Lifting Drinks,Interior,Sugar Shack,Secret Factory,Reassign Hub,2,625.4,243.5,61.1,764,1337.0,60.0,48.53
+Fun Dip,Atlantic,Sugar Shack,Wicked Choccy's,Reassign Hub,1,1202.4,714.4,40.6,488,854.0,40.0,31.54
+Fun Dip,Interior,Sugar Shack,Secret Factory,Reassign Hub,1,599.7,154.4,74.2,445,778.75,40.0,49.12
+Hair Toffee,Gulf,The Other Factory,Wicked Choccy's,Reassign Hub,1,573.5,256.3,55.3,317,554.75,77.8,50.23
+Laffy Taffy,Interior,Sugar Shack,Secret Factory,Reassign Hub,1,651.0,333.9,48.7,317,554.75,62.3,43.05
+Everlasting Gobstopper,Interior,Secret Factory,The Other Factory,Reassign Hub,1,816.4,521.3,36.1,295,516.25,80.0,42.07
+Hair Toffee,Atlantic,The Other Factory,Wicked Choccy's,Reassign Hub,1,950.4,714.4,24.8,236,413.0,77.8,34.99
+Everlasting Gobstopper,Pacific,Secret Factory,Lot's O' Nuts,Reassign Hub,1,793.8,558.8,29.6,235,411.25,80.0,38.15

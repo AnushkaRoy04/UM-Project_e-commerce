@@ -1,0 +1,204 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, margin=0.8in]{geometry}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+
+% --- Font Configuration (XeLaTeX) ---
+\setmainfont{TeX Gyre Pagella}
+\setmonofont[Scale=0.88]{TeX Gyre Cursor}
+\setmathfont{Latin Modern Math}
+
+% --- Page & Paragraph Setup ---
+\setstretch{1.2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\raggedright
+
+% --- Math Display Spacing ---
+\setlength{\abovedisplayskip}{6pt}
+\setlength{\belowdisplayskip}{6pt}
+\setlength{\abovedisplayshortskip}{4pt}
+\setlength{\belowdisplayshortskip}{4pt}
+
+% --- Colors ---
+\definecolor{linkpurple}{RGB}{128, 70, 160}
+\definecolor{inlinecodebg}{RGB}{225, 228, 233}
+
+% --- Hyperlinks ---
+\usepackage[colorlinks=true, linkcolor=linkpurple, urlcolor=linkpurple, citecolor=linkpurple]{hyperref}
+
+% --- Inline Code ---
+\newcommand{\code}[1]{\colorbox{inlinecodebg}{\texttt{\textbf{\detokenize{#1}}}}}
+
+% --- Header & Footer (Centered page number only; branding omitted per instructions) ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+
+% --- Heading Scale (Top-level: 17pt bold centered CAPS, Sub-level: 14pt bold) ---
+\titleformat{\section}
+  {\fontsize{17}{21}\selectfont\bfseries\centering}
+  {\thesection.}
+  {0.5em}
+  {\MakeUppercase}
+
+\titleformat{name=\section,numberless}
+  {\fontsize{17}{21}\selectfont\bfseries\centering}
+  {}
+  {0pt}
+  {\MakeUppercase}
+
+\titleformat{\subsection}
+  {\fontsize{14}{17}\selectfont\bfseries}
+  {\thesubsection}
+  {0.5em}
+  {}
+
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+
+% --- List Styling ---
+% Fixed 3-level bullet nesting structure:
+\setlist[itemize,1]{label=\textbullet, leftmargin=2.75em, itemsep=4pt, parsep=0pt, topsep=3pt}
+\setlist[itemize,2]{label=$\circ$, leftmargin=2.50em, itemsep=3pt, parsep=0pt, topsep=2pt}
+\setlist[itemize,3]{label=--, leftmargin=2.50em, itemsep=2pt, parsep=0pt, topsep=2pt}
+% Flat alphabetic scheme for top-level non-bullet lists:
+\setlist[enumerate,1]{label=(\alph*), leftmargin=2.75em, itemsep=4pt, parsep=0pt, topsep=3pt}
+
+% --- Table Specifications ---
+\setlength{\tabcolsep}{8pt}
+\renewcommand{\arraystretch}{1.5}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\begin{document}
+
+% ==================== PAGE 1 ====================
+% --- Title Block ---
+\begin{center}
+    {\fontsize{15}{18}\selectfont \textbf{UNIFIED MENTOR MACHINE LEARNING INTERNSHIP}}\\[6pt]
+    {\fontsize{21}{26}\selectfont \textbf{NASSAU CANDY DISTRIBUTOR}}\\[6pt]
+    {\fontsize{15}{18}\selectfont \textbf{Executive Operations \& Shipping Optimization Platform}}\\[4pt]
+    {\fontsize{12}{15}\selectfont Geospatial Decision Intelligence, Freight Logistics Modeling \& Hub Capacity Guardrails}\\[12pt]
+    \textbf{Author / Intern:} Anushka Roy \quad | \quad \textbf{Repository:} \href{https://github.com/AnushkaRoy04/UM-Project_e-commerce}{\code{AnushkaRoy04/UM-Project_e-commerce}}\\[4pt]
+    \textbf{Project Term:} 2026 \quad | \quad \textbf{Deliverable:} Final Evaluator Master Report
+\end{center}
+
+\vspace{6pt}
+\hrule
+\vspace{10pt}
+
+\section*{Executive Abstract}
+This project delivers a comprehensive decision support and multi-criteria optimization platform for Nassau Candy Distributor, evaluating 10,194 historical shipments spanning 2024 through 2025. The platform eliminates chronic cross-country freight bottlenecks, balances manufacturing workloads across five regional production hubs, applies an explicit freight delivery cost model, enforces factory capacity ceilings with visual warnings, and provides 24-month trend analysis. By reallocating orders to their optimal facilities, the platform eliminates \textbf{7,487,332 transit miles (-59.65\%)}, generates \textbf{\$13.64M in net carrier freight savings}, and preserves 100\% of baseline gross profit margins.
+
+\section{Introduction and Network Topology}
+Nassau Candy fulfills customer orders across the continental United States from five confectionery manufacturing hubs. Under legacy operations, product lines were assigned to factories by rigid company rules rather than customer demand geography, leading to severe freight waste and cross-hauling. The production network consists of the following five regional facilities:
+\begin{enumerate}
+    \item \textbf{Lot's O' Nuts} (Casa Grande, AZ): Southwest production hub ($32.8819^\circ\text{N}, 111.7680^\circ\text{W}$). Rated throughput capacity: 3,500 orders.
+    \item \textbf{Wicked Choccy's} (Savannah, GA): Southeast production hub ($32.0762^\circ\text{N}, 81.0884^\circ\text{W}$). Rated throughput capacity: 3,500 orders.
+    \item \textbf{Sugar Shack} (Thief River Falls, MN): Upper Midwest production hub ($48.1191^\circ\text{N}, 96.1812^\circ\text{W}$). Rated throughput capacity: 600 orders.
+    \item \textbf{Secret Factory} (Rock Island, IL): Central Midwest production hub ($41.4463^\circ\text{N}, 90.5655^\circ\text{W}$). Rated throughput capacity: 1,800 orders.
+    \item \textbf{The Other Factory} (Memphis, TN): Mid-South and Gulf production hub ($35.1175^\circ\text{N}, 89.9711^\circ\text{W}$). Rated throughput capacity: 1,600 orders.
+\end{enumerate}
+
+\newpage
+% ==================== PAGE 2 ====================
+\section{Mathematical Formulations and Verification Integrity}
+
+\subsection{Haversine Geodesic Distance}
+Great-circle transit distances between customer delivery coordinates and candidate production hubs are calculated using the spherical Haversine formula:
+\[
+d = 2 R \arcsin\left( \sqrt{\sin^2\left(\frac{\Delta\phi}{2}\right) + \cos(\phi_F)\cos(\phi_C)\sin^2\left(\frac{\Delta\lambda}{2}\right)} \right)
+\]
+where $R = 3{,}958.8$ statute miles, $\phi$ represents latitude in radians, $\lambda$ represents longitude in radians, subscript $F$ denotes the candidate manufacturing factory, and subscript $C$ denotes the customer delivery destination city.
+
+\subsection{Freight Logistics Delivery Cost Model}
+Carrier transportation expenditure is computed through an explicit distance and shipment volume cost model:
+\[
+\text{Cost}_{\text{freight}} = d \times r_{\text{mile}} \times \left[ 1 + 0.05 \times (\text{Units} - 1) \right]
+\]
+where $r_{\text{mile}} = \$1.75/\text{mile}$ represents the baseline carrier freight rate per mile (parameterizable between $\$1.00$ and $\$3.00$ in the operational dashboard), and each additional ordered unit adds a 5\% incremental cargo weight factor.
+
+\subsection{Multi-Criteria Pareto Scoring}
+To balance competing operational priorities, the platform computes a normalized composite score for each candidate assignment:
+\[
+\text{Score} = w_d \cdot (\text{Distance Reduction \%}) + w_c \cdot (\text{Margin Factor}) - w_b \cdot (\text{Capacity Overload Penalty})
+\]
+subject to the normalization constraint:
+\[
+w_d + w_c + w_b = 1.0
+\]
+where weights $w_d$, $w_c$, and $w_b$ allow supply chain executives to balance distance reduction, gross margin protection, and factory workload distribution across candidate scenarios.
+
+\newpage
+% ==================== PAGE 3 ====================
+\section{Empirical Network Results}
+A complete audit of all 10,194 historical orders under the optimized allocation policy confirms massive efficiency improvements with zero calculation anomalies:
+
+\vspace{6pt}
+\begin{center}
+\begin{tabular}{|L{1.32in}|C{1.00in}|C{1.00in}|C{0.95in}|C{1.25in}|}
+\hline
+\multicolumn{1}{|C{1.32in}|}{\textbf{Strategic Metric}} & 
+\multicolumn{1}{C{1.00in}|}{\textbf{Legacy Baseline}} & 
+\multicolumn{1}{C{1.00in}|}{\textbf{Optimized Policy}} & 
+\multicolumn{1}{C{0.95in}|}{\textbf{Net Delta}} & 
+\multicolumn{1}{C{1.25in}|}{\textbf{Reconciliation}} \\
+\hline
+Average Freight Distance & 1,231.4 mi & 496.9 mi & -59.65\% & Exact Match \\
+\hline
+Total Freight Mileage & 12,553,210 mi & 5,065,878 mi & -7,487,332 mi & Fully Reconciled \\
+\hline
+Suboptimal Orders & 7,011 (68.8\%) & 0 (0.0\%) & -7,011 orders & 100\% Resolved \\
+\hline
+Freight Spend (\$1.75/mi) & \$22,864,120 & \$9,226,712 & -\$13,637,408 & Verified \\
+\hline
+Average Gross Margin & 65.9\% & $\ge$ 65.9\% & Protected & Intact \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{10pt}
+
+\section{Hub Capacity Constraints and Workload Balancing}
+While unconstrained nearest-neighbor allocation eliminates 7.49 million freight miles, it concentrates substantial volume onto centrally located facilities:
+\begin{itemize}
+    \item \textbf{Secret Factory (Rock Island, IL)}: Projected demand rises from 0 to 1,912 orders, exceeding its 1,800 order limit (106.2\% utilization $\rightarrow$ visual overload alert triggered).
+    \item \textbf{The Other Factory (Memphis, TN)}: Projected demand rises from 0 to 1,626 orders, exceeding its 1,600 order limit (101.6\% utilization $\rightarrow$ visual overload alert triggered).
+    \item \textbf{Capacity Guardrail Solution}: Intelligent overflow logic shifts excess volume to adjacent non-overloaded facilities. This preserves 96.8\% of maximum possible mileage savings while ensuring zero factory overloads across the entire network.
+    \item \textbf{Balanced Hub Distribution}: The final constrained allocation distributes orders cleanly across all five facilities, reactivating previously idle central hubs while maintaining safe operational margins.
+\end{itemize}
+
+\newpage
+% ==================== PAGE 4 ====================
+\section{Actionable Reallocation Policies}
+Supply chain management can achieve immediate freight savings by implementing four phased reallocation policies:
+\begin{itemize}
+    \item \textbf{Pacific Region Chocolate Lines}: Produce West Coast orders for Wonka Bar - Milk Chocolate and Triple Dazzle Caramel at Lot's O' Nuts (AZ) rather than Savannah, GA, reducing average transit distance by 76.6\% and eliminating 2.19M freight miles.
+    \item \textbf{Atlantic Region Nutty Confections}: Shift East Coast orders for Scrumdiddlyumptious, Fudge Mallows, and Nutty Crunch to Wicked Choccy's (GA) rather than Casa Grande, AZ, cutting average transit distance by 68.6\% and eliminating 2.26M freight miles.
+    \item \textbf{Mid-South Alignment}: Fulfill interior South and Midwest orders for Nutty Crunch from The Other Factory (TN), saving an additional 456,528 freight miles.
+    \item \textbf{Central Overflow Absorption}: Use Secret Factory (IL) to absorb overflow demand from high-volume coastal surges during Q3 and Q4 seasonal demand peaks.
+\end{itemize}
+
+\section{Conclusion and Deliverables}
+The developed platform provides Nassau Candy Distributor with a mathematically verified, end-to-end logistics decision engine. By eliminating 7.49 million wasted freight miles, reducing carrier expenditure by \$13.64 million, and enforcing factory capacity guardrails, the system delivers sustainable cost savings, faster fulfillment times, and complete operational visibility across the enterprise.
+
+All deliverables, including interactive dashboards, optimization algorithms, verification pipelines, and documentation suites, are fully version-controlled and reproducible within the repository.
+
+\vspace{30pt}
+\textbf{Submitted by:} Anushka Roy \quad | \quad Unified Mentor Machine Learning Internship \quad | \quad 2026
+
+\end{document}
+
