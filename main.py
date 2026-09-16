@@ -33,6 +33,18 @@ import time
 # Ensure project root is in sys.path
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
+# Auto-detect Streamlit runtime: if executed via `streamlit run main.py` (e.g. Streamlit Cloud default),
+# transparently redirect to app/main_dashboard.py
+try:
+    import streamlit.runtime
+    if streamlit.runtime.exists():
+        import runpy
+        dashboard_file = os.path.join(os.path.dirname(__file__), "app", "main_dashboard.py")
+        runpy.run_path(dashboard_file, run_name="__main__")
+        sys.exit(0)
+except (ImportError, ModuleNotFoundError):
+    pass
+
 from src.data_pipeline import run_pipeline
 from src.optimization_engine import generate_optimization_recommendations
 from src.report_generator import build_pdf_report
